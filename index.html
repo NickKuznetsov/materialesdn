@@ -8,46 +8,168 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header__inner">
-      <div class="logo">Materiales del Norte</div>
-      <nav class="nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
+      <nav class="nav nav--primary">
+        <a href="#inicio" class="nav__link">Inicio</a>
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#contacto" class="nav__link">Contacto</a>
+        <a href="#contacto" class="btn btn--small btn--outline nav__cta">Cotizar</a>
       </nav>
+
+      <a href="#inicio" class="logo logo--hero">
+        <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte">
+        
+      </a>
+
+      <div class="header__actions">
+        <a href="#contacto" class="btn btn--small btn--outline header__cta">Cotizar</a>
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Блок 1: Hero -->
+    <!-- БЛОК 1: HERO -->
     <section id="inicio" class="section section--hero">
+      <div class="hero__background">
+        <div class="hero__bg-gradient"></div>
+        <div class="hero__bg-blur"></div>
+      </div>
+
       <div class="container hero__grid">
         <div class="hero__content">
-          <h1>Materiales para construcción y logística a nivel nacional.</h1>
-          <p class="text-lead">
-            Empresa mexicana dedicada a la compra, venta y entrega de materiales para la construcción.
+          <h1 class="hero__title">Materiales del Norte</h1>
+          <p class="hero__subtitle">
+            Proveedor especializado en materiales para construcción y logística nacional.
           </p>
+          
+          <p class="hero__description">
+            Trabajamos con marcas profesionales como Sika, Mapei y Retex. Entrega puntual, cotizaciones rápidas y atención personalizada.
+          </p>
+          
+          <div class="hero__logos">
+            <div class="hero__logos-track">
+              <img src="assets/img/Mapei_logo.svg" alt="Mapei" class="logo-item">
+              <img src="assets/img/Logo_Sika_AG.svg" alt="Sika" class="logo-item">
+              <img src="assets/img/retex logo.png" alt="Retex" class="logo-item">
+              <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte" class="logo-item">
+              <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte" class="logo-item">
+            </div>
+          </div>
+          
           <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary">Contáctanos</a>
-            <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+            <a href="#contacto" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            <a href="#servicios" class="btn btn--secondary btn--lg">Explorar servicios</a>
           </div>
         </div>
-        <div class="hero__media">
-          <!-- Заглушка под картинку склада -->
-          <div class="hero__placeholder">Imagen del almacén / logística</div>
+        
+        <div class="hero__media-wrapper">
+          <div class="hero__media-box">
+            <figure class="hero__media">
+              <img
+                src="assets/img/hero-placeholder.svg"
+                alt="Sitio de construcción moderno"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <div class="hero__media-accent"></div>
+          </div>
         </div>
+      </div>
+
+    </section>
+
+    <!-- ДАЛЬШЕ БУДУТ СЕКЦИИ 2, 3, 4... -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2>Servicios</h2>
+        <p>Próximamente...</p>
       </div>
     </section>
 
-    <!-- Дальше будем добавлять блоки 2, 3, 4... -->
+    <!-- Секция контактов мы добавим позже -->
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer__inner">
       <span>© Materiales del Norte</span>
       <span>Horario: 8:00 am – 5:00 pm</span>
     </div>
   </footer>
+<script>
+  const nav = document.querySelector('.nav');
+  const toggle = document.querySelector('.nav-toggle');
+
+  if (nav && toggle) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('nav-toggle--open');
+      nav.classList.toggle('nav--open');
+    });
+  }
+
+  const startHeroLogoMarquee = () => {
+    const track = document.querySelector('.hero__logos-track');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!track || prefersReducedMotion) {
+      return;
+    }
+
+    let offset = 0;
+    let lastTime = performance.now();
+    const speed = 40; // px per second
+
+    const getGapValue = () => {
+      const styles = getComputedStyle(track);
+      const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
+      return Number.isNaN(gapValue) ? 0 : gapValue;
+    };
+
+    let gap = getGapValue();
+
+    const recycleLogos = () => {
+      let first = track.firstElementChild;
+
+      while (first) {
+        const firstWidth = first.getBoundingClientRect().width;
+        if (offset > -(firstWidth + gap)) {
+          break;
+        }
+        offset += firstWidth + gap;
+        track.appendChild(first);
+        first = track.firstElementChild;
+      }
+    };
+
+    const step = (time) => {
+      const delta = time - lastTime;
+      lastTime = time;
+      offset -= (speed * delta) / 1000;
+      recycleLogos();
+      track.style.transform = `translateX(${offset}px)`;
+      requestAnimationFrame(step);
+    };
+
+    window.addEventListener('resize', () => {
+      gap = getGapValue();
+    });
+
+    track.style.transform = 'translateX(0px)';
+    requestAnimationFrame(step);
+  };
+
+  if (document.readyState === 'complete') {
+    startHeroLogoMarquee();
+  } else {
+    window.addEventListener('load', startHeroLogoMarquee);
+  }
+</script>
 </body>
 </html>
