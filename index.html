@@ -20,7 +20,6 @@
 
       <a href="#inicio" class="logo logo--hero">
         <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte">
-        
       </a>
 
       <div class="header__actions">
@@ -36,60 +35,114 @@
   <main>
     <!-- БЛОК 1: HERO -->
     <section id="inicio" class="section section--hero">
-      <div class="hero__background">
-        <div class="hero__bg-gradient"></div>
-        <div class="hero__bg-blur"></div>
-      </div>
-
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <h1 class="hero__title">Materiales del Norte</h1>
-          <p class="hero__subtitle">
-            Proveedor especializado en materiales para construcción y logística nacional.
-          </p>
-          
-          <p class="hero__description">
-            Trabajamos con marcas profesionales como Sika, Mapei y Retex. Entrega puntual, cotizaciones rápidas y atención personalizada.
-          </p>
-          
-          <div class="hero__logos">
-            <div class="hero__logos-track">
-              <img src="assets/img/Mapei_logo.svg" alt="Mapei" class="logo-item">
-              <img src="assets/img/Logo_Sika_AG.svg" alt="Sika" class="logo-item">
-              <img src="assets/img/retex logo.png" alt="Retex" class="logo-item">
-              <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte" class="logo-item">
-              <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte" class="logo-item">
-            </div>
-          </div>
-          
-          <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href="#servicios" class="btn btn--secondary btn--lg">Explorar servicios</a>
-          </div>
+      <div class="hero__overlay"></div>
+      
+      <div class="hero__content-center">
+        <h1 class="hero__title">Materiales del Norte</h1>
+        <p class="hero__subtitle">
+          Proveedor especializado en materiales para construcción y logística nacional.
+        </p>
+        
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary btn--lg">Solicitar cotización</a>
+          <a href="#servicios" class="btn btn--secondary btn--lg">Ver servicios</a>
         </div>
         
-        <div class="hero__media-wrapper">
-          <div class="hero__media-box">
-            <figure class="hero__media">
-              <img
-                src="assets/img/hero-placeholder.svg"
-                alt="Sitio de construcción moderno"
-                loading="lazy"
-                decoding="async"
-              >
-            </figure>
-            <div class="hero__media-accent"></div>
+        <div class="hero__logos">
+          <div class="hero__logos-track">
+            <img src="assets/img/Mapei_logo.svg" alt="Mapei" class="logo-item">
+            <img src="assets/img/Logo_Sika_AG.svg" alt="Sika" class="logo-item">
+            <img src="assets/img/retex logo.png" alt="Retex" class="logo-item">
+            <img src="assets/img/pennsylvania.png" alt="Pennsylvania" class="logo-item">
+            <img src="assets/img/cemix.png" alt="Cemix" class="logo-item">
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- ДАЛЬШЕ БУДУТ СЕКЦИИ 2, 3, 4... -->
-    <section id="servicios" class="section">
+    <!-- БЛОК 2: WHAT WE OFFER -->
+    <section id="servicios" class="section section--services">
       <div class="container">
-        <h2>Servicios</h2>
-        <p>Próximamente...</p>
+        <div class="services__content">
+          <h2 class="services__title">Lo que ofrecemos</h2>
+          <p class="services__subtitle">Suministro de materiales para construcción con servicio confiable y atención directa.</p>
+        </div>
+        
+        <div class="services__carousel">
+          <div class="services__track">
+            <div class="service-slide active">
+              <div class="service-slide__image">
+                <img src="assets/img/Materiales.png" alt="Materiales para construcción">
+              </div>
+              <div class="service-slide__content">
+                <div class="service-slide__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="m2 17 10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="m2 12 10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3 class="service-slide__title">Materiales para construcción</h3>
+                <p class="service-slide__description">Suministro bajo pedido y entregas coordinadas según las necesidades de tu obra.</p>
+              </div>
+            </div>
+
+            <div class="service-slide">
+              <div class="service-slide__image">
+                <img src="assets/img/materialesdn-back.png" alt="Marcas confiables">
+              </div>
+              <div class="service-slide__content">
+                <div class="service-slide__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+                <h3 class="service-slide__title">Marcas confiables</h3>
+                <p class="service-slide__description">Trabajamos con Mapei, Sika, Retex y otras marcas reconocidas en el sector.</p>
+              </div>
+            </div>
+
+            <div class="service-slide">
+              <div class="service-slide__image">
+                <img src="assets/img/background-materialesdn.png" alt="Logística nacional">
+              </div>
+              <div class="service-slide__content">
+                <div class="service-slide__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m21 10-7.5-7.5L9 7l-4.5-4.5L1 6l4.5 4.5L9 7l4.5 4.5L21 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 12h9l-9 9-9-9h9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3 class="service-slide__title">Logística nacional</h3>
+                <p class="service-slide__description">Coordinamos envíos a cualquier estado de México con seguimiento de cada entrega.</p>
+              </div>
+            </div>
+
+            <div class="service-slide">
+              <div class="service-slide__image">
+                <img src="assets/img/materialesdn-back.png" alt="Atención personalizada">
+              </div>
+              <div class="service-slide__content">
+                <div class="service-slide__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+                <h3 class="service-slide__title">Atención personalizada</h3>
+                <p class="service-slide__description">Trato directo, cotizaciones rápidas y soluciones ajustadas a cada proyecto.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="services__indicators">
+            <button class="service-indicator active" data-slide="0"></button>
+            <button class="service-indicator" data-slide="1"></button>
+            <button class="service-indicator" data-slide="2"></button>
+            <button class="service-indicator" data-slide="3"></button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -104,72 +157,52 @@
     </div>
   </footer>
 <script>
+  const header = document.querySelector('.site-header');
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav-toggle');
 
-  if (nav && toggle) {
+  if (header && nav && toggle) {
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('nav-toggle--open');
-      nav.classList.toggle('nav--open');
+      header.classList.toggle('site-header--open');
     });
   }
 
-  const startHeroLogoMarquee = () => {
-    const track = document.querySelector('.hero__logos-track');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Services carousel
+  const track = document.querySelector('.services__track');
+  const slides = document.querySelectorAll('.service-slide');
+  const indicators = document.querySelectorAll('.service-indicator');
+  let currentSlide = 0;
 
-    if (!track || prefersReducedMotion) {
-      return;
-    }
-
-    let offset = 0;
-    let lastTime = performance.now();
-    const speed = 40; // px per second
-
-    const getGapValue = () => {
-      const styles = getComputedStyle(track);
-      const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
-      return Number.isNaN(gapValue) ? 0 : gapValue;
-    };
-
-    let gap = getGapValue();
-
-    const recycleLogos = () => {
-      let first = track.firstElementChild;
-
-      while (first) {
-        const firstWidth = first.getBoundingClientRect().width;
-        if (offset > -(firstWidth + gap)) {
-          break;
-        }
-        offset += firstWidth + gap;
-        track.appendChild(first);
-        first = track.firstElementChild;
-      }
-    };
-
-    const step = (time) => {
-      const delta = time - lastTime;
-      lastTime = time;
-      offset -= (speed * delta) / 1000;
-      recycleLogos();
-      track.style.transform = `translateX(${offset}px)`;
-      requestAnimationFrame(step);
-    };
-
-    window.addEventListener('resize', () => {
-      gap = getGapValue();
+  function goToSlide(slideIndex) {
+    track.style.transform = `translateX(-${slideIndex * 100}%)`;
+    
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === slideIndex);
     });
-
-    track.style.transform = 'translateX(0px)';
-    requestAnimationFrame(step);
-  };
-
-  if (document.readyState === 'complete') {
-    startHeroLogoMarquee();
-  } else {
-    window.addEventListener('load', startHeroLogoMarquee);
+    
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === slideIndex);
+    });
+    
+    currentSlide = slideIndex;
   }
+
+  function nextSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    goToSlide(nextIndex);
+  }
+
+  // Auto-scroll every 4 seconds
+  setInterval(nextSlide, 4000);
+
+  // Manual navigation via indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToSlide(index);
+    });
+  });
+
 </script>
 </body>
 </html>
