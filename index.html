@@ -23,7 +23,7 @@
       </a>
 
       <div class="header__actions">
-        <a href="#contacto" class="btn btn--small btn--outline header__cta">Cotizar</a>
+        <a href="#contacto" class="btn btn--small btn--outline btn--fixed-width header__cta">Cotizar</a>
         <button class="nav-toggle" aria-label="Abrir menú">
           <span></span>
           <span></span>
@@ -38,14 +38,14 @@
       <div class="hero__overlay"></div>
       
       <div class="hero__content-center">
-        <h1 class="hero__title">Materiales del Norte</h1>
+        <h1 class="hero__title">MATERIALES DEL NORTE</h1>
         <p class="hero__subtitle">
           Proveedor especializado en materiales para construcción y logística nacional.
         </p>
         
         <div class="hero__actions">
-          <a href="#contacto" class="btn btn--primary btn--lg">Solicitar cotización</a>
-          <a href="#servicios" class="btn btn--secondary btn--lg">Ver servicios</a>
+          <a href="#contacto" class="btn btn--primary btn--lg btn--fixed-width">Solicitar cotización</a>
+          <a href="#servicios" class="btn btn--secondary btn--lg btn--fixed-width">Ver servicios</a>
         </div>
         
         <div class="hero__logos">
@@ -135,25 +135,142 @@
               </div>
             </div>
           </div>
+        </div>
+        
+        <div class="services__indicators">
+          <button class="service-indicator active" data-slide="0"></button>
+          <button class="service-indicator" data-slide="1"></button>
+          <button class="service-indicator" data-slide="2"></button>
+          <button class="service-indicator" data-slide="3"></button>
+        </div>
+      </div>
+    </section>
 
-          <div class="services__indicators">
-            <button class="service-indicator active" data-slide="0"></button>
-            <button class="service-indicator" data-slide="1"></button>
-            <button class="service-indicator" data-slide="2"></button>
-            <button class="service-indicator" data-slide="3"></button>
+    <!-- БЛОК 3: COBERTURA -->
+    <section id="cobertura" class="section section--coverage">
+      <div class="container">
+        <div class="coverage__content">
+          <div class="coverage__info">
+            <h2 class="coverage__title">Cobertura de envíos</h2>
+            <p class="coverage__description">Envíos coordinados <span class="state-name">en todo México</span></p>
+            <p class="coverage__text">Trabajamos con las principales transportadoras para garantizar entregas seguras y puntuales a cualquier estado del país.</p>
+            <a href="#contacto" class="btn btn--secondary">Consultar cobertura</a>
+          </div>
+          <div class="coverage__map">
+            <object data="assets/img/mx.svg" type="image/svg+xml" class="mexico-map"></object>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Секция контактов мы добавим позже -->
+    <!-- CONTACT FORM -->
+    <section id="contacto" class="section section--contact">
+      <div class="container">
+        <div class="contact__content">
+          <div class="contact__info">
+            <h2 class="contact__title">Solicitar cotización</h2>
+            <p class="contact__description">Envíanos tus datos y nos pondremos en contacto contigo a la brevedad</p>
+            <div class="contact__details">
+              <div class="contact__detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>+52 998 459 3536</span>
+              </div>
+              <div class="contact__detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>amartinez@materialesdn.com.mx</span>
+              </div>
+              <div class="contact__detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Lun - Vie: 8:00 am – 5:00 pm</span>
+              </div>
+            </div>
+          </div>
+          
+          <form class="contact__form" id="contactForm">
+            <div class="form__group">
+              <label for="name" class="form__label">Nombre completo</label>
+              <input type="text" id="name" name="name" class="form__input" required>
+            </div>
+            
+            <div class="form__group">
+              <label for="company" class="form__label">Empresa</label>
+              <input type="text" id="company" name="company" class="form__input" required>
+            </div>
+            
+            <div class="form__row">
+              <div class="form__group">
+                <label for="email" class="form__label">Correo electrónico</label>
+                <input type="email" id="email" name="email" class="form__input" required>
+              </div>
+              
+              <div class="form__group">
+                <label for="phone" class="form__label">Teléfono</label>
+                <input type="tel" id="phone" name="phone" class="form__input" required>
+              </div>
+            </div>
+            
+            <div class="form__group">
+              <label for="message" class="form__label">Mensaje</label>
+              <textarea id="message" name="message" class="form__textarea" rows="4" placeholder="Describe los materiales que necesitas..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn--primary btn--fixed-width">Enviar solicitud</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer__inner">
-      <span>© Materiales del Norte</span>
-      <span>Horario: 8:00 am – 5:00 pm</span>
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <a href="#inicio" class="footer__logo">
+            <img src="assets/img/materialesdn-logo2.svg" alt="Materiales del Norte">
+          </a>
+          <h3 class="footer__company-name">MATERIALES DEL NORTE</h3>
+        </div>
+        
+        <nav class="footer__nav">
+          <h3 class="footer__nav-title">Navegación</h3>
+          <ul class="footer__nav-list">
+            <li><a href="#inicio" class="footer__link">Inicio</a></li>
+            <li><a href="#servicios" class="footer__link">Servicios</a></li>
+            <li><a href="#contacto" class="footer__link">Contacto</a></li>
+          </ul>
+        </nav>
+        
+        <div class="footer__contact">
+          <h3 class="footer__contact-title">Contacto</h3>
+          <ul class="footer__contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="tel:+525512345678" class="footer__link">+52 998 459 3536</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:contacto@materialesdn.com" class="footer__link">amartinez@materialesdn.com.mx</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span>Lun - Vie: 8:00 am – 5:00 pm</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>© 2025 Materiales del Norte. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 <script>
@@ -167,6 +284,25 @@
       header.classList.toggle('site-header--open');
     });
   }
+
+  // Header scroll behavior - change appearance on light background
+  const heroSection = document.querySelector('.section--hero');
+  
+  function updateHeaderAppearance() {
+    if (!header || !heroSection) return;
+    
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + 100; // offset for header height
+    
+    if (scrollPosition > heroBottom) {
+      header.classList.add('site-header--scrolled');
+    } else {
+      header.classList.remove('site-header--scrolled');
+    }
+  }
+  
+  window.addEventListener('scroll', updateHeaderAppearance);
+  updateHeaderAppearance(); // initial check
 
   // Services carousel
   const track = document.querySelector('.services__track');
@@ -202,6 +338,121 @@
       goToSlide(index);
     });
   });
+
+  // Mexico map hover effect
+  const mapObject = document.querySelector('.mexico-map');
+  const stateNameSpan = document.querySelector('.state-name');
+  
+  if (mapObject && stateNameSpan) {
+    // State names dictionary
+    const stateNames = {
+      'MXAGU': 'Aguascalientes',
+      'MXBCN': 'Baja California',
+      'MXBCS': 'Baja California Sur',
+      'MXCAM': 'Campeche',
+      'MXCHH': 'Chihuahua',
+      'MXCHP': 'Chiapas',
+      'MXCMX': 'Ciudad de México',
+      'MXCOA': 'Coahuila',
+      'MXCOL': 'Colima',
+      'MXDUR': 'Durango',
+      'MXGRO': 'Guerrero',
+      'MXGUA': 'Guanajuato',
+      'MXHID': 'Hidalgo',
+      'MXJAL': 'Jalisco',
+      'MXMEX': 'México',
+      'MXMIC': 'Michoacán',
+      'MXMOR': 'Morelos',
+      'MXNAY': 'Nayarit',
+      'MXNLE': 'Nuevo León',
+      'MXOAX': 'Oaxaca',
+      'MXPUE': 'Puebla',
+      'MXQUE': 'Querétaro',
+      'MXROO': 'Quintana Roo',
+      'MXSIN': 'Sinaloa',
+      'MXSLP': 'San Luis Potosí',
+      'MXSON': 'Sonora',
+      'MXTAB': 'Tabasco',
+      'MXTAM': 'Tamaulipas',
+      'MXTLA': 'Tlaxcala',
+      'MXVER': 'Veracruz',
+      'MXYUC': 'Yucatán',
+      'MXZAC': 'Zacatecas'
+    };
+    
+    const defaultText = stateNameSpan.textContent;
+    
+    mapObject.addEventListener('load', function() {
+      const svgDoc = mapObject.contentDocument;
+      if (svgDoc) {
+        const states = svgDoc.querySelectorAll('path[id^="MX"]');
+        
+        states.forEach(state => {
+          state.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          state.style.cursor = 'pointer';
+          
+          state.addEventListener('mouseenter', function() {
+            this.style.fill = '#f3b76a';
+            this.style.transform = 'translateY(-3px)';
+            this.style.filter = 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15))';
+            
+            // Update text with state name
+            const stateName = stateNames[this.id] || this.id;
+            stateNameSpan.textContent = `a ${stateName}`;
+          });
+          
+          state.addEventListener('mouseleave', function() {
+            this.style.fill = '#d8933f';
+            this.style.transform = 'translateY(0)';
+            this.style.filter = 'none';
+            
+            // Restore default text
+            stateNameSpan.textContent = defaultText;
+          });
+        });
+      }
+    });
+  }
+
+  // Contact Form Handler
+  const contactForm = document.getElementById('contactForm');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get('name'),
+        company: formData.get('company'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        message: formData.get('message')
+      };
+      
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Nueva solicitud de cotización - ${data.company}`);
+      const body = encodeURIComponent(
+        `Nombre: ${data.name}\n` +
+        `Empresa: ${data.company}\n` +
+        `Correo: ${data.email}\n` +
+        `Teléfono: ${data.phone}\n\n` +
+        `Mensaje:\n${data.message}`
+      );
+      
+      const mailtoLink = `mailto:amartinez@materialesdn.com.mx?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      alert('¡Gracias! Se abrirá tu cliente de correo para enviar la solicitud.');
+      
+      // Reset form
+      contactForm.reset();
+    });
+  }
 
 </script>
 </body>
