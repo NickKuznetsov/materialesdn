@@ -292,15 +292,29 @@
   }
 
   // Header scroll behavior - change appearance on light background
-  const heroSection = document.querySelector('.section--hero');
+  const sections = document.querySelectorAll('section');
   
   function updateHeaderAppearance() {
-    if (!header || !heroSection) return;
+    if (!header) return;
     
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const scrollPosition = window.scrollY + 100; // offset for header height
+    const scrollPosition = window.scrollY + 50; // offset for header height
+    let isOnLightBackground = false;
     
-    if (scrollPosition > heroBottom) {
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      
+      // Check if header is over this section
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        // Check if section has light background (services or contact sections)
+        if (section.classList.contains('section--services') || 
+            section.classList.contains('section--contact')) {
+          isOnLightBackground = true;
+        }
+      }
+    });
+    
+    if (isOnLightBackground) {
       header.classList.add('site-header--scrolled');
     } else {
       header.classList.remove('site-header--scrolled');
