@@ -1,5 +1,5 @@
 /* ========== FONT IMPORT ========== */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 /* ========== RESET / BASE ========== */
 
@@ -51,8 +51,8 @@ img {
   --color-accent-hover: #f3b76a; /* Акцент при наведении */
 
   /* Типографика */
-  --font-base: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-base: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 18px;
@@ -570,6 +570,7 @@ p {
 }
 
 .service-slide__title {
+  font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 600;
   margin: 0;
@@ -645,6 +646,7 @@ p {
 }
 
 .coverage__title {
+  font-family: var(--font-heading);
   font-size: var(--font-size-xl);
   color: var(--color-white);
   margin: 0;
@@ -704,6 +706,7 @@ p {
 }
 
 .contact__title {
+  font-family: var(--font-heading);
   font-size: var(--font-size-xl);
   color: var(--color-text);
   margin: 0 0 var(--space-md);
@@ -913,8 +916,7 @@ p {
   font-weight: 600;
   color: var(--color-white);
   margin: 0 0 var(--space-lg);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 .footer__nav-list,
@@ -1009,6 +1011,7 @@ p {
 }
 
 .hero__title {
+  font-family: var(--font-heading);
   font-size: var(--font-size-xxl);
   font-weight: 800;
   line-height: 1.1;
