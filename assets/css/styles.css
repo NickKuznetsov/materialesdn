@@ -1784,6 +1784,11 @@ a.footer__contact-item:hover .footer__contact-value {
   margin-top: var(--space-md);
 }
 
+.hero__actions .btn {
+  min-width: 200px;
+  text-align: center;
+}
+
 .btn--outline {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
