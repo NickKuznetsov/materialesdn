@@ -1329,25 +1329,18 @@ p {
   flex-direction: column;
 }
 
-.contact__info-title {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 0 var(--space-sm);
-}
-
 .contact__info-text {
-  color: rgba(255, 255, 255, 0.6);
   font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
-  margin: 0 0 var(--space-xl);
+  margin: 0 0 var(--space-md);
 }
 
 .contact__methods {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  margin-bottom: auto;
 }
 
 .contact__method {
@@ -1424,8 +1417,8 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding-top: var(--space-xl);
-  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
