@@ -1935,7 +1935,7 @@ a.footer__contact-item:hover {
   }
   
   .footer__brand-text {
-    max-width: none;
+    max-width: 180px;
   }
   
   .footer__column:last-child {
@@ -1965,12 +1965,13 @@ a.footer__contact-item:hover {
   
   .footer__column:last-child {
     align-items: center;
+    gap: var(--space-lg);
   }
-  
+
   .footer__column:last-child .footer__column-title {
     align-self: center;
   }
-  
+
   .footer__contact-list {
     align-items: center;
     display: flex;
