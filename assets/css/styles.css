@@ -901,6 +901,19 @@ p {
 }
 
 @media (max-width: 600px) {
+  .materials__header {
+    position: sticky;
+    top: 60px;
+    background-color: var(--color-light);
+    z-index: 20;
+    padding: 16px 0;
+    margin-bottom: 0;
+  }
+  
+  .materials__title {
+    font-size: 28px;
+  }
+  
   .materials__showcase {
     grid-template-columns: 1fr;
     gap: 0;
@@ -916,7 +929,7 @@ p {
     height: 350px !important;
     width: 100% !important;
     position: sticky;
-    top: 100px;
+    top: 140px;
     border-radius: 0;
   }
   
