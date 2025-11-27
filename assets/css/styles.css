@@ -691,26 +691,20 @@ p {
     height: 200px;
     min-height: 200px;
   }
-  
-  .service-indicator {
-    width: 10px;
-    height: 10px;
-    flex-shrink: 0;
-  }
 }
 
 @media (max-width: 1024px) {
-  .services__carousel {
-    touch-action: pan-x;
-    -webkit-overflow-scrolling: touch;
+  .services__indicators {
+    gap: 12px;
   }
   
   .service-indicator {
-    width: 10px;
-    height: 10px;
+    width: 10px !important;
+    height: 10px !important;
     min-width: 10px;
     min-height: 10px;
-    aspect-ratio: 1;
+    padding: 0;
+    border-radius: 50% !important;
   }
 }
 

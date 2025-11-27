@@ -762,23 +762,29 @@
   // Touch swipe support for mobile
   if (carousel) {
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
+    let touchEndY = 0;
     
     carousel.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
     
     carousel.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       handleSwipe();
     }, { passive: true });
     
     function handleSwipe() {
       const swipeThreshold = 50;
-      const diff = touchStartX - touchEndX;
+      const diffX = touchStartX - touchEndX;
+      const diffY = touchStartY - touchEndY;
       
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
+      // Only trigger horizontal swipe if horizontal movement is greater than vertical
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+        if (diffX > 0) {
           // Swipe left - next slide
           nextSlide();
         } else {
