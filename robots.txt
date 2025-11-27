@@ -1,0 +1,22 @@
+# Robots.txt for Materiales del Norte
+# https://materialesdn.com.mx
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://materialesdn.com.mx/sitemap.xml
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay for politeness
+Crawl-delay: 1

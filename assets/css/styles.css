@@ -1973,7 +1973,7 @@ a.footer__contact-item:hover {
 
 .section--hero {
   position: relative;
-  background: url("../img/background-materialesdn.png") center / cover no-repeat;
+  background: url("../img/materiales-construccion-hero-bg.png") center / cover no-repeat;
   color: var(--color-white);
   min-height: 100vh;
   display: flex;
