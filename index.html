@@ -719,6 +719,7 @@
   const track = document.querySelector('.services__track');
   const slides = document.querySelectorAll('.service-slide');
   const indicators = document.querySelectorAll('.service-indicator');
+  const carousel = document.querySelector('.services__carousel');
   let currentSlide = 0;
 
   function goToSlide(slideIndex) {
@@ -739,16 +740,57 @@
     const nextIndex = (currentSlide + 1) % slides.length;
     goToSlide(nextIndex);
   }
+  
+  function prevSlide() {
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    goToSlide(prevIndex);
+  }
 
   // Auto-scroll every 4 seconds
-  setInterval(nextSlide, 4000);
+  let autoScrollInterval = setInterval(nextSlide, 4000);
 
   // Manual navigation via indicators
   indicators.forEach((indicator, index) => {
     indicator.addEventListener('click', () => {
       goToSlide(index);
+      // Reset auto-scroll on manual interaction
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = setInterval(nextSlide, 4000);
     });
   });
+  
+  // Touch swipe support for mobile
+  if (carousel) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe left - next slide
+          nextSlide();
+        } else {
+          // Swipe right - previous slide
+          prevSlide();
+        }
+        // Reset auto-scroll on swipe
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(nextSlide, 4000);
+      }
+    }
+  }
 
   // Mexico map hover effect
   const mapObject = document.querySelector('.mexico-map');

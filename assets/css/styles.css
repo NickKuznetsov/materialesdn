@@ -691,6 +691,27 @@ p {
     height: 200px;
     min-height: 200px;
   }
+  
+  .service-indicator {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services__carousel {
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .service-indicator {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    aspect-ratio: 1;
+  }
 }
 
 /* ========== MATERIALS SECTION ========== */
