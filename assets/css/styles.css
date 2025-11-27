@@ -1440,6 +1440,10 @@ p {
   .about__features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .about__feature-card {
+    aspect-ratio: auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1467,78 +1471,6 @@ p {
   
   .about__feature-description {
     font-size: 14px;
-  }
-}
-
-/* About section - short height screens */
-@media (max-height: 750px) and (min-width: 601px) {
-  .about__feature-card {
-    aspect-ratio: auto;
-    min-height: auto;
-    padding: clamp(12px, 2vh, 24px) clamp(14px, 2vw, 28px);
-  }
-  
-  .about__feature-number {
-    font-size: clamp(22px, 4vh, 36px);
-    margin-bottom: clamp(4px, 0.8vh, 10px);
-  }
-  
-  .about__feature-title {
-    font-size: clamp(12px, 2vh, 16px);
-    margin-bottom: clamp(4px, 0.6vh, 8px);
-  }
-  
-  .about__feature-description {
-    font-size: clamp(10px, 1.6vh, 14px);
-  }
-  
-  .about__brands-mini {
-    gap: clamp(4px, 0.6vh, 8px);
-    margin-bottom: clamp(6px, 0.8vh, 12px);
-  }
-  
-  .about__brands-mini span {
-    font-size: clamp(9px, 1.4vh, 13px);
-    padding: clamp(3px, 0.4vh, 5px) clamp(6px, 0.8vh, 10px);
-  }
-  
-  .about__brands-text {
-    font-size: clamp(9px, 1.4vh, 13px);
-  }
-}
-
-@media (max-height: 600px) and (min-width: 601px) {
-  .about__feature-card {
-    padding: 10px 12px;
-  }
-  
-  .about__feature-number {
-    font-size: 20px;
-    margin-bottom: 4px;
-  }
-  
-  .about__feature-title {
-    font-size: 11px;
-    margin-bottom: 3px;
-  }
-  
-  .about__feature-description {
-    font-size: 10px;
-    line-height: 1.4;
-  }
-  
-  .about__brands-mini {
-    gap: 4px;
-    margin-bottom: 4px;
-  }
-  
-  .about__brands-mini span {
-    font-size: 9px;
-    padding: 2px 6px;
-  }
-  
-  .about__brands-text {
-    font-size: 9px;
   }
 }
 
