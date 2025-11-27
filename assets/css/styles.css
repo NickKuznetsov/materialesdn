@@ -903,10 +903,10 @@ p {
 @media (max-width: 600px) {
   .materials__header {
     position: sticky;
-    top: 60px;
+    top: 70px;
     background-color: var(--color-light);
     z-index: 20;
-    padding: 16px 0;
+    padding: 20px 0;
     margin-bottom: 0;
   }
   
@@ -929,8 +929,8 @@ p {
     height: 350px !important;
     width: 100% !important;
     position: sticky;
-    top: 140px;
-    border-radius: 0;
+    top: 150px;
+    border-radius: 0 !important;
   }
   
   
