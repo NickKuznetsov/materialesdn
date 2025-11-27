@@ -901,17 +901,17 @@ p {
 }
 
 @media (max-width: 600px) {
+  .section--materials {
+    padding-top: 40px;
+  }
+  
   .materials__header {
     position: sticky;
     top: 70px;
     background-color: var(--color-light);
     z-index: 20;
-    padding: 20px 0;
+    padding: 20px 0 16px;
     margin-bottom: 0;
-  }
-  
-  .materials__title {
-    font-size: 28px;
   }
   
   .materials__showcase {
@@ -929,7 +929,7 @@ p {
     height: 350px !important;
     width: 100% !important;
     position: sticky;
-    top: 150px;
+    top: 142px;
     border-radius: 0 !important;
   }
   
@@ -2354,7 +2354,7 @@ a.footer__contact-item:hover {
   .footer__contact-item {
     background: var(--color-dark);
     color: var(--color-white);
-    border-radius: var(--border-radius-md);
+    border-radius: 0;
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     border: 1px solid rgba(255,255,255,0.10);
     padding: var(--space-lg) var(--space-md);
