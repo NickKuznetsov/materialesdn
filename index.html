@@ -574,6 +574,45 @@
               </div>
               
               <div class="form__group">
+                <label for="estado" class="form__label">Estado</label>
+                <select id="estado" name="estado" class="form__input form__select" required>
+                  <option value="">Selecciona tu estado</option>
+                  <option value="Aguascalientes">Aguascalientes</option>
+                  <option value="Baja California">Baja California</option>
+                  <option value="Baja California Sur">Baja California Sur</option>
+                  <option value="Campeche">Campeche</option>
+                  <option value="Chiapas">Chiapas</option>
+                  <option value="Chihuahua">Chihuahua</option>
+                  <option value="Ciudad de México">Ciudad de México</option>
+                  <option value="Coahuila">Coahuila</option>
+                  <option value="Colima">Colima</option>
+                  <option value="Durango">Durango</option>
+                  <option value="Estado de México">Estado de México</option>
+                  <option value="Guanajuato">Guanajuato</option>
+                  <option value="Guerrero">Guerrero</option>
+                  <option value="Hidalgo">Hidalgo</option>
+                  <option value="Jalisco">Jalisco</option>
+                  <option value="Michoacán">Michoacán</option>
+                  <option value="Morelos">Morelos</option>
+                  <option value="Nayarit">Nayarit</option>
+                  <option value="Nuevo León">Nuevo León</option>
+                  <option value="Oaxaca">Oaxaca</option>
+                  <option value="Puebla">Puebla</option>
+                  <option value="Querétaro">Querétaro</option>
+                  <option value="Quintana Roo">Quintana Roo</option>
+                  <option value="San Luis Potosí">San Luis Potosí</option>
+                  <option value="Sinaloa">Sinaloa</option>
+                  <option value="Sonora">Sonora</option>
+                  <option value="Tabasco">Tabasco</option>
+                  <option value="Tamaulipas">Tamaulipas</option>
+                  <option value="Tlaxcala">Tlaxcala</option>
+                  <option value="Veracruz">Veracruz</option>
+                  <option value="Yucatán">Yucatán</option>
+                  <option value="Zacatecas">Zacatecas</option>
+                </select>
+              </div>
+              
+              <div class="form__group">
                 <label for="message" class="form__label">Mensaje</label>
                 <textarea id="message" name="message" class="form__textarea" rows="4" placeholder="Describe los materiales que necesitas, cantidades aproximadas y ubicación de entrega..." required></textarea>
               </div>
@@ -873,43 +912,54 @@
     });
   }
 
-  // Contact Form Handler
+  // Contact Form Handler - Google Sheets Integration
   const contactForm = document.getElementById('contactForm');
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7ajAVJflx-EWvWCMnnNwPxngYRnx3tF8Ajmj4I1GpuYU_3rxhg_2QY4-qBAV_te-cMA/exec';
   
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
       
       // Get form data
       const formData = new FormData(contactForm);
       const data = {
-        name: formData.get('name'),
-        company: formData.get('company'),
+        nombre: formData.get('name'),
+        empresa: formData.get('company'),
         email: formData.get('email'),
-        phone: formData.get('phone'),
-        message: formData.get('message')
+        telefono: formData.get('phone'),
+        estado: formData.get('estado') || '',
+        mensaje: formData.get('message')
       };
       
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Nueva solicitud de cotización - ${data.company}`);
-      const body = encodeURIComponent(
-        `Nombre: ${data.name}\n` +
-        `Empresa: ${data.company}\n` +
-        `Correo: ${data.email}\n` +
-        `Teléfono: ${data.phone}\n\n` +
-        `Mensaje:\n${data.message}`
-      );
-      
-      const mailtoLink = `mailto:contacto@materialesdn.com.mx?subject=${subject}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      // Show success message
-      alert('¡Gracias! Se abrirá tu cliente de correo para enviar la solicitud.');
-      
-      // Reset form
-      contactForm.reset();
+      try {
+        // Send to Google Sheets
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+        
+        // Show success message
+        alert('¡Gracias! Tu solicitud ha sido enviada. Nos pondremos en contacto contigo pronto.');
+        
+        // Reset form
+        contactForm.reset();
+        
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar. Por favor intenta de nuevo o contáctanos directamente por WhatsApp.');
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
     });
   }
 
