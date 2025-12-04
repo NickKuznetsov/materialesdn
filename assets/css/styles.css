@@ -801,6 +801,13 @@ p {
   z-index: 2;
 }
 
+/* Desktop alignment fix for cards with long titles */
+@media (min-width: 1025px) {
+  .material-showcase-item__content--align {
+    padding-top: clamp(40px, 5vw, 60px);
+  }
+}
+
 .material-showcase-item__tag {
   display: inline-block;
   font-size: clamp(9px, 0.9vw, 11px);
@@ -828,10 +835,11 @@ p {
 
 .material-showcase-item__description {
   font-size: clamp(11px, 1.1vw, 14px);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-dark);
   margin: 0;
   opacity: 0;
   transition: opacity 0.3s ease 0.1s;
+  font-weight: 500;
 }
 
 .material-showcase-item:hover .material-showcase-item__description {
@@ -960,7 +968,7 @@ p {
   }
   
   .materials__showcase .material-showcase-item:not(:first-child) {
-    margin-top: -40px;
+    margin-top: 0;
   }
   
   
