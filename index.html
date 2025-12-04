@@ -193,7 +193,7 @@
           <div class="services__track">
             <div class="service-slide active">
               <div class="service-slide__image">
-                <img src="assets/img/Materiales.png" alt="Materiales para construcción">
+                <img src="assets/img/Materiales para construcción.png" alt="Materiales para construcción">
               </div>
               <div class="service-slide__content">
                 <div class="service-slide__icon">
@@ -226,7 +226,7 @@
 
             <div class="service-slide">
               <div class="service-slide__image">
-                <img src="assets/img/materiales-construccion-hero-bg.png" alt="Logística y distribución nacional de materiales de construcción">
+                <img src="assets/img/logistica nacional.png" alt="Logística y distribución nacional de materiales de construcción">
               </div>
               <div class="service-slide__content">
                 <div class="service-slide__icon">
@@ -242,7 +242,7 @@
 
             <div class="service-slide">
               <div class="service-slide__image">
-                <img src="assets/img/materialesdn-back.png" alt="Atención personalizada">
+                <img src="assets/img/Atencion personalizada.png" alt="Atención personalizada">
               </div>
               <div class="service-slide__content">
                 <div class="service-slide__icon">
@@ -294,7 +294,7 @@
 
           <div class="material-showcase-item material-showcase-item--wide">
             <div class="material-showcase-item__image">
-              <img src="assets/img/waterproof.png" alt="Impermeabilizantes y membranas para construcción">
+              <img src="assets/img/waterproofing.png" alt="Impermeabilizantes y membranas para construcción">
             </div>
             <div class="material-showcase-item__overlay"></div>
             <div class="material-showcase-item__content">
@@ -690,6 +690,20 @@
         header.classList.remove('site-header--open');
       });
     });
+    
+    // Close menu and focus form when clicking Cotizar button in burger menu
+    const navCta = nav.querySelector('.nav__cta');
+    if (navCta) {
+      navCta.addEventListener('click', (e) => {
+        toggle.classList.remove('nav-toggle--open');
+        header.classList.remove('site-header--open');
+        // Focus first form field after scroll
+        setTimeout(() => {
+          const firstInput = document.querySelector('#contacto input[name="nombre"]');
+          if (firstInput) firstInput.focus();
+        }, 500);
+      });
+    }
   }
 
   // Header scroll behavior - change appearance on light background

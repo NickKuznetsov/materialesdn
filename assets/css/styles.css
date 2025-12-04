@@ -526,6 +526,7 @@ p {
   margin-top: 0;
   position: relative;
   z-index: 2;
+  scroll-margin-top: 60px;
 }
 
 .services__content {
@@ -713,6 +714,7 @@ p {
 .section--materials {
   background-color: var(--color-light);
   padding-top: var(--space-xl);
+  scroll-margin-top: 60px;
 }
 
 .materials__header {
@@ -952,16 +954,10 @@ p {
   }
   
   .material-showcase-item__image img {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    max-width: none !important;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover !important;
+    object-position: center !important;
   }
   
   .material-showcase-item:first-child {
@@ -1013,7 +1009,7 @@ p {
   }
   
   .material-showcase-item:hover .material-showcase-item__image img {
-    transform: translate(-50%, -50%) !important;
+    transform: none !important;
   }
   
   
@@ -1022,7 +1018,7 @@ p {
   }
   
   .material-showcase-item.is-active .material-showcase-item__image img {
-    transform: translate(-50%, -50%) scale(1.05) !important;
+    transform: none !important;
   }
 }
 
@@ -1031,6 +1027,7 @@ p {
 .section--coverage {
   background-color: var(--color-dark);
   overflow: hidden;
+  scroll-margin-top: 60px;
 }
 
 .coverage__header {
@@ -1222,6 +1219,7 @@ p {
   background-color: var(--color-dark);
   color: rgba(255, 255, 255, 0.85);
   overflow: hidden;
+  scroll-margin-top: 60px;
 }
 
 .about__content {
@@ -1487,6 +1485,7 @@ p {
 
 .section--contact {
   background-color: var(--color-light);
+  scroll-margin-top: 60px;
 }
 
 .contact__header {
@@ -1971,13 +1970,14 @@ a.footer__contact-item:hover {
 
 @media (max-width: 600px) {
   .site-footer {
-    padding: 48px 0 var(--space-lg);
+    padding: 24px 0 var(--space-lg);
   }
   
   .footer__grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
     text-align: center;
+    padding-top: var(--space-xl);
   }
   
   
@@ -2384,7 +2384,7 @@ a.footer__contact-item:hover {
     border-radius: 0;
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     border: 1px solid rgba(255,255,255,0.10);
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-sm) var(--space-md);
     font-size: 15px;
     width: 100%;
     max-width: 340px;
@@ -2415,10 +2415,10 @@ a.footer__contact-item:hover {
     font-size: 14px;
     color: rgba(255,255,255,0.8);
     background: var(--color-dark);
-    border-radius: var(--border-radius-md);
+    border-radius: 0;
     box-shadow: 0 8px 32px rgba(0,0,0,0.10);
     border: 1px solid rgba(255,255,255,0.08);
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-sm) var(--space-md);
     align-items: center;
     gap: var(--space-md);
   }
